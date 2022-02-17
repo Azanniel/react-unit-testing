@@ -1,8 +1,36 @@
 import { useState } from 'react'
 
 function App() {
+  const [newItem, setNewItem] = useState('')
+  const [list, setList] = useState(['Leandro', 'Matheus', 'Kleyson', 'Bruce'])
+
+  function addToList() {
+    setTimeout(() => {
+      setList(state => [...state, newItem])
+    }, 500);
+  }
+
+  function removeFromList(item: string) {
+    setTimeout(() => {
+
+      setList(state => state.filter(item => item !== item))
+    }, 500);
+  }
+
   return (
-    <h1>Hello world</h1>
+    <>
+      <input placeholder='Novo Item' type="text" value={newItem} onChange={e => setNewItem(e.target.value)} />
+      <button onClick={addToList}>Adicionar</button>
+
+      <ul>
+        {list.map(item => (
+          <li key={item}>
+            {item}
+            <button onClick={() => removeFromList(item)}>Remover</button>
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }
 
