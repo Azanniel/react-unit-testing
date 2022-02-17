@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "git-commit-msg-linter": "^4.0.7",
@@ -16,6 +17,8 @@
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@vitejs/plugin-react": "^1.0.7",
+    "jest": "^27.5.1",
+    "ts-node": "^10.5.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }
